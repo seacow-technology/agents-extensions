@@ -1,0 +1,16 @@
+[project]
+name = "octopusos-ext-websearch"
+version = "0.1.0"
+description = "Internal web search extension for OctopusOS"
+requires-python = ">=3.10"
+dependencies = [
+  "beautifulsoup4>=4.12.0",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["octopus_ext_websearch*"]

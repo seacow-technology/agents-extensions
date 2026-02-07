@@ -1,0 +1,36 @@
+{
+  "id": "octopusos.ext.websearch",
+  "name": "Internal Web Search",
+  "version": "0.1.0",
+  "description": "Internal implementation for communication.web_search",
+  "author": "Seacow Technology",
+  "license": "Proprietary",
+  "runtime": "python",
+  "python": {
+    "version": "3.11",
+    "dependencies": ["beautifulsoup4>=4.12.0"]
+  },
+  "external_bins": [],
+  "entrypoint": null,
+  "capabilities": [
+    {
+      "type": "tool",
+      "name": "communication.web_search",
+      "description": "Search external web sources with controlled policies",
+      "config": {
+        "risk": "MEDIUM",
+        "modes_allowed": ["LOCAL_OPEN", "LOCAL_LOCKED"],
+        "network_required": true
+      }
+    }
+  ],
+  "permissions_required": ["network.call", "audit.log"],
+  "platforms": ["linux", "darwin", "win32"],
+  "install": {
+    "mode": "octopusos_managed",
+    "plan": "install/plan.yaml"
+  },
+  "docs": {
+    "usage": "README.md"
+  }
+}
